@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="search-styles.css" />
+    <!-- BOOTSTRAP -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body class="body-primary">
+    <!-- <h1 class="text-primary">Hola Koders!</h1> -->
+    <header class="header__nav bg-light position-sticky sticky-top">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid d-flex">
+          <!--Button Ofcanvas-->
+          <button
+            class="c-btn c-btn--icon-alone js-hamburger-trigger mx-2 d-md-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"><img src="" alt="" /></span>
+          </button>
+
+          <!--Logo button-->
+          <a class="site-logo">
+            <img
+              src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
+              alt=""
+            />
+          </a>
+
+          <div
+            class="collapse navbar-collapse position-relative mb-0"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-0 m-lg-2"></ul>
+            <div
+              class="search__container d-none d-lg-block d-md-block"
+              style="width: 420px"
+            >
+              <form class="d-flex position-relative">
+                <input
+                  class="form-control me-2"
+                  id="input-search"
+                  type="text"
+                  placeholder="Search..."
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-secondary position-relative"
+                  id="button-search"
+                  type="button"
+                  style="border: none; right: 55px"
+                >
+                  <img src="/src/search.svg" alt="" />
+                </button>
+              </form>
+            </div>
+            <!--Create Post Button-->
+            <a href="" class="create-post__button">Create Post</a>
+          </div>
+
+          <!--Search Icon-->
+          <a class="search-logo d-block d-lg-none" href="">
+            <img src="/src/search.svg" alt="" />
+          </a>
+
+          <!--Notification bell-->
+          <a class="notifications-logo" href=""
+            ><img src="/src/notification.svg" alt=""
+          /></a>
+
+          <!--User Account Button-->
+          <button class="user__button" type="submit">
+            <span>
+              <img
+                src="https://res.cloudinary.com/practicaldev/image/fetch/s--4zZ4vSLE--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/1135735/1821abf9-98b8-4d79-a4f1-859ca0ef2a5f.png"
+                alt=""
+              />
+            </span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div>
+      <nav class="d-flex m:mx-0 s:flex items-center justify-content-between">
+        <div>
+          <span class="fw-bold fs-1">Search results for </span>
+        </div>
+        <div>
+          <ul class="d-flex mt-4 list-unstyled">
+            <li class="me-2">
+              <a
+                class="fs-5 text-black fw-bold text-decoration-none"
+                data-text="Relevant"
+                href=""
+                >Most Relevant</a
+              >
+            </li>
+            <li class="me-2">
+              <a class="anchor--decoration fs-5 text-decoration-none" href=""
+                >Newest</a
+              >
+            </li>
+            <li class="me-2">
+              <a class="anchor--decoration fs-5 text-decoration-none" href=""
+                >Oldest</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!--Main Section Container-->
+    <div class="container">
+      <div class="row">
+        <!-- first aside  -->
+        <div
+          id="sidebar-wrapper-left"
+          class="first__aside f col-3 sidebar-wrapper sidebar-wrapper-left crayons-layout__sidebar-left crayons-layout__content"
+        >
+          <aside class="side-bar" aria-label="Primary sidebar ">
+            <nav class="mb-4" data-testid="main-nav" aria-label="DEV Community">
+              <ul class="navagation-links">
+                <li class="c-links">
+                  <a
+                    href=""
+                    class="span__side1 text-decoration-none fw-bold fs-5"
+                    ><span class="home-icon"></span>Posts</a
+                  >
+                </li>
+                <li class="c-links">
+                  <a href="" class="span__side1 text-decoration-none fs-5"
+                    ><span class="home-icon"></span>Podcasts</a
+                  >
+                </li>
+                <li class="c-links">
+                  <a href="" class="span__side1 text-decoration-none fs-5"
+                    ><span class="home-icon"></span>People</a
+                  >
+                </li>
+                <li class="c-links">
+                  <a href="" class="span__side1 text-decoration-none fs-5"
+                    ><span class="home-icon"></span>Organizations</a
+                  >
+                </li>
+                <li class="c-links">
+                  <a href="" class="span__side1 text-decoration-none fs-5"
+                    ><span class="home-icon"></span>Tags</a
+                  >
+                </li>
+                <li class="c-links">
+                  <a href="" class="span__side1 text-decoration-none fs-5"
+                    ><span class="home-icon"></span>Comments</a
+                  >
+                </li>
+                <li class="c-links">
+                  <a href="" class="span__side1 text-decoration-none fs-5"
+                    ><span class="home-icon"></span>My posts only</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+        <!--  first aside end -->
+
+        <main class="posts_container col-12 col-md-9">
+          <header class="p-2 px-3 m:p-0 m:px-0 m:mb-2 mt-3">
+            <div class="d-block d-lg-none">
+              <form class="d-flex position-relative" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search..."
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-success position-relative"
+                  type="submit"
+                  style="border: none; right: 55px"
+                >
+                  <img src="/src/search.svg" alt="" />
+                </button>
+              </form>
+            </div>
+
+            <nav
+              class="d-block d-md-none -mx-3 m:mx-0 s:flex items-center justify-between"
+            >
+              <ul class="d-flex list-unstyled">
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-black fw-bold text-decoration-none"
+                    data-text="Relevant"
+                    href=""
+                    >Most Relevant</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >Newest</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >Oldest</a
+                  >
+                </li>
+              </ul>
+            </nav>
+
+            <nav
+              class="d-block d-md-none nav-scroll-horizontal -mx-3 m:mx-0 s:flex items-center justify-between"
+            >
+              <ul class="d-flex list-unstyled">
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-black fw-bold text-decoration-none"
+                    data-text="Relevant"
+                    href=""
+                    >Posts</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >Podcasts</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >People</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >Organizations</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >Tags</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >Comments</a
+                  >
+                </li>
+                <li class="me-2">
+                  <a
+                    class="anchor--decoration fs-6 text-decoration-none"
+                    href=""
+                    >My post only</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </header>
+
+          <!-- Cards Main -->
+          <ul id="posts-main-search" class="mb-3" style="list-style: none;">
+
+          </ul>
+          <!-- fourth card -->
+          <!-- <div class="card">
+                <div class="card-body">
+                <div class="card__top--content d-flex flex-row">
+                    <div class="card__top--photo-name d-flex flex-row">
+                    <div class="card__comment--image">
+                        <a class="card__comment--image--final d-flex"
+                        ><span
+                            ><img
+                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--Suleqjrm--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/657568/6e377e7e-7355-479b-a746-50d72e006363.png"
+                            alt="" /></span
+                        ></a>
+                    </div>
+                    <div class="name__date--container d-flex flex-column">
+                        <a href="">Karishma Shukla</a>
+                        <a href=""> Aug 7 (3days ago)</a>
+                    </div>
+                    </div>
+                </div>
+                <h5 class="card-title">
+                    How to Improve Performance of Your Database by Indexing Large
+                    Tables
+                </h5>
+                <ul class="card__tags d-flex flex-wrap list-unstyled">
+                    <li class="card__tag me-2">#programming</li>
+                    <li class="card__tag me-2">#database</li>
+                    <li class="card__tag me-2">#postgres</li>
+                </ul>
+                </div>
+                <div class="multiple__reactions__number">
+                    <a class="main__reaction--container" href="">
+                        <span class="multiple__reactions--container">
+                        <span class="reaction--item">
+                            <img
+                            src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"
+                            alt="" /></span
+                        ><span class="reaction--item">
+                            <img
+                            src="https://dev.to/assets/raised-hands-74b2099fd66a39f2d7eed9305ee0f4553df0eb7b4f11b01b6b1b499973048fe5.svg"
+                            alt="" /></span
+                        ><span class="reaction--item"
+                            ><img
+                            src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"
+                            alt="" /></span
+                        ><span class="reaction--item"
+                            ><img
+                            src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"
+                            alt="" /></span
+                        ><span class="reaction--item"
+                            ><img
+                            src="https://dev.to/assets/sparkle-heart-5f9bee3767e18deb1bb725290cb151c25234768a0e9a2bd39370c382d02920cf.svg"
+                            alt=""
+                        /></span>
+                        </span>
+                        <a class="comments__number--cards d-flex align-items-center">
+                            <img src="/src/comments.svg" alt="" />
+                            <span class="comments__number--card text-primary-emphasis"
+                                >8 comments</span
+                        >
+                        </a>
+                        <div class="last__minute__reaction d-flex">
+                        <p class="minute-read-font text-primary-emphasis">
+                            3min read
+                        </p>
+                        <span class="button-reaction-menu">
+                            <img src="/src/bookmark.svg" alt="" />
+                        </span>
+                        </div>
+                    </a>
+                </div>
+          </div> -->
+        </main>
+      </div>
+    </div>
+    <!--Offcanvas-->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasExampleLabel">
+          DEV Community
+        </h2>
+        <!--Button Closing-->
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav class="mb-4" data-testid="main-nav" aria-label="DEV Community">
+          <ul class="navagation-links">
+            <li class="c-links">
+              <a
+                href=""
+                class="span__side1 text-decoration-none sidebar-navigation-link c-link c-link--block c-link--icon-left"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/home.svg" alt="" /></span
+                >Home</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/listings.svg" alt="" /></span
+                >Listing</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/podcasts.svg" alt="" /></span
+                >Podcasts</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/videos.svg" alt="" /></span
+                >Videos</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/tags.svg" alt="" /></span
+                >Tags</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/faq.svg" alt="" /></span
+                >FAQ</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/forem-shop.svg" alt="" /></span
+                >Forem shop</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img
+                    class="icons"
+                    src="/src/advertise-on-dev.svg"
+                    alt="" /></span
+                >Advertise on DEV</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/about.svg" alt="" /></span
+                >About</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/contact.svg" alt="" /></span
+                >Contact</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img class="icons" src="/src/guides.svg" alt="" /></span
+                >Guides</a
+              >
+            </li>
+            <li class="c-links">
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="home-icon"
+                  ><img
+                    class="icons"
+                    src="/src/software-comparisons.svg"
+                    alt="" /></span
+                >Software comparisons</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <nav class="other mb-4">
+          <h2 class="h2__side1">Other</h2>
+          <ul class="other-nav__links">
+            <li>
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="other-nav__icons"
+                  ><img src="/src/code-of-conduct.svg" alt="" /></span
+                >Code of Conduct</a
+              >
+            </li>
+            <li>
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="other-nav__icons"
+                  ><img src="/src/privacy-policy.svg" alt="" /></span
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a href="" class="span__side1 text-decoration-none"
+                ><span class="other-nav__icons"
+                  ><img src="/src/terms-of-use.svg" alt="" /></span
+                >Terms of use</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div
+          class="social-media-icons d-flex justify-content-start align-items-end mt-2 ms-3"
+        >
+          <a href="./twt.svg"
+            ><span><img src="/src/twitter.svg" alt="" /></span
+          ></a>
+          <a href="./twt.svg"
+            ><span><img src="/src/facebook.svg" alt="" /></span
+          ></a>
+          <a href="./twt.svg"
+            ><span><img src="/src/github.svg" alt="" /></span
+          ></a>
+          <a href="./twt.svg"
+            ><span><img src="/src/instagram.svg" alt="" /></span
+          ></a>
+          <a href="./twt.svg"
+            ><span><img src="/src/twitch.svg" alt="" /></span
+          ></a>
+          <a href="./twt.svg"
+            ><span><img src="/src/foostodon.svg" alt="" /></span
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!--Offcanvas end-->
+    <!-- BOOTSTRAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script src="search.js"></script>
+  </body>
+</html>
