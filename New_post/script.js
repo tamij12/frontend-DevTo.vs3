@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function elements () {
         };
 
     try {
-        const response = await fetch("/ruta-de-creacion-de-publicacion", {
+        const response = await fetch("http://localhost:3000/new_post", {
             method: "POST",
             headers: {
             "Content-Type": "application/json", 
@@ -154,6 +154,29 @@ document.addEventListener("DOMContentLoaded", function elements () {
   });
   
 
-
+//prueba de conexión
+    document.getElementById('pruebaBoton').addEventListener('click', function () {
+      fetch('http://localhost:3000/prueba')  
+        .then((response) => {
+          if (response.ok) {
+            // Si la solicitud fue exitosa, verifica el tipo de contenido de la respuesta
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('text/plain')) {
+              return response.text();
+            } else {
+              throw new Error('La respuesta no es de tipo texto plano.');
+            }
+          } else {
+            throw new Error('Error en la solicitud.');
+          }
+        })
+        .then((jsCode) => {
+        
+          eval(jsCode);
+        })
+        .catch((error) => {
+          console.error('Error en la solicitud:', error);
+        });
+    });
 
 
